@@ -10,13 +10,12 @@ Mais detalhes no site da disciplina:
 
 Integrantes:
 
-- Nome 
-- Nome
-- Nome
+- Isabella
+- Ana Laiz
 
 Nome da marca:
 
-- Nome e logo?
+<img src="logo.png">
 
 ## Interface
 
@@ -29,10 +28,25 @@ Nome da marca:
 > - Grava um vídeo explicando a interface
 
 
-Descricão da primeira proposta da interface:
+Descricão da primeira proposta da interface: A proposta é fazer uma interface com todas as funcionalidades requeridas, de fácil manuseio e acesso, com fundo escuro. Ela contará com 3 telas: tela de início, tela de trajeto e tela de configuração de aro.
 
 - Imagem da proposta
+
+<img src="mural.png">
+
 - Imagem da proposta no LCD
+
+#### Tela de início
+
+<img src="inicio.jpg">
+
+#### Tela de trajeto
+
+<img src="trajeto.jpg">
+
+#### Tela de configuração de aro
+
+<img src="config.jpg">
 - Vídeo explicando a interface
 
 ### Proposta UX 2 - B
