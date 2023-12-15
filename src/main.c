@@ -86,6 +86,8 @@ lv_obj_t * labelDistStr;
 lv_obj_t * labelVmStr;
 lv_obj_t * labelAcl1;
 lv_obj_t * labelAcl2;
+lv_obj_t * labelAro; 
+lv_obj_t * roller1;
 
 SemaphoreHandle_t xSemaphoreConfig;
 SemaphoreHandle_t xSemaphoreHome;
@@ -237,7 +239,6 @@ void create_scr_1(lv_obj_t * screen) {
 	lv_obj_align(labelClock1, LV_ALIGN_TOP_RIGHT, -5 , 10);
 	lv_obj_set_style_text_font(labelClock1, &dseg12, LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(labelClock1, lv_color_white(), LV_STATE_DEFAULT);
-	//lv_label_set_text_fmt(labelClock, "17:45:05");
 	
 	labelLine1 = lv_label_create(screen);
 	lv_obj_align(labelLine1, LV_ALIGN_TOP_MID, 0 , 10);
@@ -257,7 +258,6 @@ void create_scr_1(lv_obj_t * screen) {
 	labelAcl1 = lv_label_create(screen);
 	lv_obj_align_to(labelAcl1, labelVelStr1, LV_ALIGN_OUT_TOP_MID, 0, 0);
 	lv_obj_set_style_text_color(labelAcl1, lv_color_white(), LV_STATE_DEFAULT);
-	//lv_label_set_text(labelAcl1,  LV_SYMBOL_UP);
 	
 	labelLine2 = lv_label_create(screen);
 	lv_obj_align(labelLine2, LV_ALIGN_BOTTOM_MID, 0 , -40);
@@ -310,18 +310,20 @@ void create_scr_2(lv_obj_t * screen) {
 	lv_obj_set_style_text_color(labelLine1, lv_color_white(), LV_STATE_DEFAULT);
 	lv_label_set_text_fmt(labelLine1, "________________________");
 	
-	lv_obj_t * roller1 = lv_roller_create(screen);
+	labelAro = lv_label_create(screen);
+	lv_obj_align(labelAro, LV_ALIGN_TOP_MID, 0 , 50);
+	lv_obj_set_style_text_color(labelAro, lv_color_white(), LV_STATE_DEFAULT);
+	lv_label_set_text_fmt(labelAro, "ARO");
+	
+	roller1 = lv_roller_create(screen);
 	lv_roller_set_options(roller1,
+	"20\n"
 	"21\n"
 	"22\n"
 	"23\n"
 	"24\n"
-	"25\n"
-	"26\n"
-	"27\n"
-	"28\n"
-	"29",
-	LV_ROLLER_MODE_INFINITE);
+	"25",
+	LV_ROLLER_MODE_NORMAL);
 
 	lv_roller_set_visible_row_count(roller1, 3);
 	lv_obj_center(roller1);
@@ -387,7 +389,7 @@ void create_scr_3(lv_obj_t * screen) {
 	//lv_label_set_text(labelAcl2,  LV_SYMBOL_UP);
 	
 	labelLine3 = lv_label_create(screen);
-	lv_obj_align_to(labelLine3, labelVelStr2, LV_ALIGN_OUT_BOTTOM_LEFT, -125 , -15);
+	lv_obj_align_to(labelLine3, labelVelStr2, LV_ALIGN_OUT_BOTTOM_LEFT, -140 , -15);
 	lv_obj_set_style_text_color(labelLine3, lv_color_white(), LV_STATE_DEFAULT);
 	lv_label_set_text_fmt(labelLine3, "________________________");
 	
@@ -401,7 +403,7 @@ void create_scr_3(lv_obj_t * screen) {
 	lv_obj_align_to(labelTempo, labelTempoStr, LV_ALIGN_OUT_RIGHT_MID, 15, 0);
 	lv_obj_set_style_text_font(labelTempo, &dseg25, LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(labelTempo, lv_color_white(), LV_STATE_DEFAULT);
-	lv_label_set_text_fmt(labelTempo, "01:50");
+	lv_label_set_text_fmt(labelTempo, "01:00");
 		
 	labelDistStr = lv_label_create(screen);
 	lv_obj_align_to(labelDistStr, labelTempoStr, LV_ALIGN_OUT_BOTTOM_MID, 0, 15);
@@ -413,7 +415,7 @@ void create_scr_3(lv_obj_t * screen) {
 	lv_obj_align_to(labelDist, labelTempo, LV_ALIGN_OUT_BOTTOM_MID, 20, 15);
 	lv_obj_set_style_text_font(labelDist, &dseg25, LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(labelDist, lv_color_white(), LV_STATE_DEFAULT);
-	lv_label_set_text_fmt(labelDist, "33");
+	lv_label_set_text_fmt(labelDist, "4.5");
 	
 	labelVmStr = lv_label_create(screen);
 	lv_obj_align_to(labelVmStr, labelDistStr, LV_ALIGN_OUT_BOTTOM_MID, -30, 15);
@@ -425,7 +427,7 @@ void create_scr_3(lv_obj_t * screen) {
 	lv_obj_align_to(labelVm, labelDist, LV_ALIGN_OUT_BOTTOM_MID, 20, 15);
 	lv_obj_set_style_text_font(labelVm, &dseg25, LV_STATE_DEFAULT);
 	lv_obj_set_style_text_color(labelVm, lv_color_white(), LV_STATE_DEFAULT);
-	lv_label_set_text_fmt(labelVm, "20");
+	lv_label_set_text_fmt(labelVm, "5");
 	
 	labelLine2 = lv_label_create(screen);
 	lv_obj_align(labelLine2, LV_ALIGN_BOTTOM_MID, 0 , -40);
